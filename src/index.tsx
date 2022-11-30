@@ -6,7 +6,8 @@ import { Provider } from 'react-redux';
 import store, { history } from './store'
 import { ConnectedRouter } from 'connected-react-router';
 
-import './index.css';
+import './style.css';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
