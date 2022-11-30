@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store, { history } from './store'
 import { ConnectedRouter } from 'connected-react-router';
-
+import 'antd/dist/antd.min.css';
 import './style.css';
 
 
