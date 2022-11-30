@@ -54,7 +54,7 @@ const Navigation = () => {
       {
         isAuth() && (
           <Menu.Item className={isDashboard}>
-            <Link to={getDashboardUrl()} >dashboard</Link>
+            <Link to={getDashboardUrl()} >Dashboard</Link>
           </Menu.Item>
         )
       }
