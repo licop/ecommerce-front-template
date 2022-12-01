@@ -9,27 +9,42 @@ const { Title, Paragraph } = Typography
 
 interface Props {
   product: Product
+  showViewProduct?: Boolean
+  showCartBtn?: boolean
 } 
 
-const ProductItem: FC<Props> = ({ product }) => {
+const ProductItem: FC<Props> = ({ 
+  product, 
+  showViewProduct = true, 
+  showCartBtn = true
+}) => {
+
+  const showButtons = () => {
+    let buttonArray = []
+    if (showViewProduct)
+      buttonArray.push(
+        <Button type="link">
+          <Link to={`/product/${product._id}`}>查看详情</Link>
+        </Button>
+      )
+    if (showCartBtn) {
+      buttonArray.push(
+        <Button type="link">
+          加入购物车
+        </Button>
+      )
+    }
+    return buttonArray
+  }
+
   return (
     <div>
       <Card
-        style={{ width: 240 }}
         cover={<Image
           src={`${API}/product/photo/${product._id}`}
           alt={product.name}
         />}
-        actions={[
-          <>
-            <Button type='link'>
-              <Link to="">查看详情</Link>
-            </Button>
-            <Button type='link'>
-              <Link to="">加入购物车</Link>
-            </Button>
-          </>
-        ]}
+        actions={showButtons()}
       >
         <Title level={5}>{product.name}</Title>
         <Paragraph ellipsis={{rows: 2}}>{product.description}</Paragraph>

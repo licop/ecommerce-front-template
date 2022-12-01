@@ -67,7 +67,7 @@ const Shop = () => {
   }
 
   const noData = () => {
-    return <Row>{filter.result.size === 0 && <Empty />}</Row>
+    return <Row>{filter.result.size < 4 && <Empty />}</Row>
   }
 
   return (
