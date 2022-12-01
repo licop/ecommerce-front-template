@@ -5,6 +5,8 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store, { history } from './store'
 import { ConnectedRouter } from 'connected-react-router';
+import CountContext from "./CountContext"
+
 import 'antd/dist/antd.min.css';
 import './style.css';
 
@@ -16,7 +18,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <MyRoutes />
+      <CountContext>
+        <MyRoutes />
+      </CountContext>
     </ConnectedRouter>
   </Provider>
 );

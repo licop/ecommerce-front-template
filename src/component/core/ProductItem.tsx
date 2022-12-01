@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 import moment from 'moment'
 import { Product } from '../../store/models/product'
 import { API } from '../../config'
+import { addItem } from '../../helpers/cart'
+import { push } from 'connected-react-router'
+import { useDispatch } from 'react-redux'
 
 const { Title, Paragraph } = Typography
 
@@ -18,6 +21,14 @@ const ProductItem: FC<Props> = ({
   showViewProduct = true, 
   showCartBtn = true
 }) => {
+   const dispatch = useDispatch()
+
+  const addToCart = () => {
+    addItem(product, () => {
+      // 跳转页面
+      dispatch(push('/cart'))
+    })
+  }
 
   const showButtons = () => {
     let buttonArray = []
@@ -29,7 +40,7 @@ const ProductItem: FC<Props> = ({
       )
     if (showCartBtn) {
       buttonArray.push(
-        <Button type="link">
+        <Button type="link" onClick={addToCart}>
           加入购物车
         </Button>
       )
