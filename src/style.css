@@ -89,3 +89,7 @@
   width: auto;
   max-width: 100%;
 }
+
+.checkBoxFilter .ant-checkbox-inner {
+  display: inline-block;
+}
