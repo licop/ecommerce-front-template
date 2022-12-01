@@ -13,3 +13,5 @@ React 实现电商项目的基础功能，可用来做真实项目的模版
 - 路由状态同步：connected-react-router
 - 网络请求：Axios
 - 调试工具：redux-devtools-extension
+
+[项目后端代码](https://github.com/licop/ecommerce-backend)
