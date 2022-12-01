@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <Layout title='糯客商场' subTitle="尽情享受吧">
-      {/* <Search /> */}
+      <Search />
       <Title level={5}>最新上架</Title>
       <Row gutter={[16, 16]}>
         {
